@@ -1,0 +1,87 @@
+### OpenTelemetry Demo API Requests
+### Update the port based on what's shown in Aspire Dashboard
+
+@baseUrl = http://localhost:5000
+
+### Basic Weather Forecast Endpoints
+
+### Get Weather Forecast (default 5 days)
+GET {{baseUrl}}/WeatherForecast
+Accept: application/json
+
+### Get Weather Forecast with custom days
+GET {{baseUrl}}/WeatherForecast?days=10
+Accept: application/json
+
+### Get Weather Forecast for specific date
+GET {{baseUrl}}/WeatherForecast/2025-08-10
+Accept: application/json
+
+### Test Error Endpoint
+GET {{baseUrl}}/WeatherForecast/error
+Accept: application/json
+
+### Test Slow Endpoint (default 2000ms)
+GET {{baseUrl}}/WeatherForecast/slow
+Accept: application/json
+
+### Test Slow Endpoint with custom delay
+GET {{baseUrl}}/WeatherForecast/slow?delayMs=5000
+Accept: application/json
+
+### Metrics Demo Endpoints
+
+### Process Request with default complexity
+GET {{baseUrl}}/Metrics/process
+Accept: application/json
+
+### Process Request with higher complexity
+GET {{baseUrl}}/Metrics/process?complexity=3
+Accept: application/json
+
+### Batch Process (default 5 items)
+GET {{baseUrl}}/Metrics/batch
+Accept: application/json
+
+### Batch Process with custom count
+GET {{baseUrl}}/Metrics/batch?count=10
+Accept: application/json
+
+### Get Status
+GET {{baseUrl}}/Metrics/status
+Accept: application/json
+
+### Advanced Telemetry Demos
+
+### Baggage Propagation Demo
+GET {{baseUrl}}/TelemetryDemo/baggage?userId=john123&tenantId=acme-corp
+Accept: application/json
+
+### Span Links Demo (Batch with linked spans)
+GET {{baseUrl}}/TelemetryDemo/span-links?itemCount=10
+Accept: application/json
+
+### All Metric Types Demo
+GET {{baseUrl}}/TelemetryDemo/metrics-demo
+Accept: application/json
+
+### Custom Telemetry Demo (Rich attributes and events)
+GET {{baseUrl}}/TelemetryDemo/custom-telemetry?complexity=7
+Accept: application/json
+
+### Context Propagation Demo
+GET {{baseUrl}}/TelemetryDemo/context-propagation
+Accept: application/json
+
+### System Endpoints
+
+### Health Check
+GET {{baseUrl}}/health
+Accept: application/json
+
+### Liveness Check
+GET {{baseUrl}}/alive
+Accept: application/json
+
+### API Documentation (open in browser)
+# http://localhost:5000/scalar/v1
